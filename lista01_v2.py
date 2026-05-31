@@ -1,6 +1,8 @@
 import math
 import statistics as st
 
+import utils
+
 # ==========================================
 # Q02, Q03, Q04: MEDIDAS DE CENTRALIDADE
 # ==========================================
@@ -201,11 +203,7 @@ def teste_aderencia_ks(dados, alpha=0.05):
 # TESTE (EXECUÇÃO)
 # ==========================================
 if __name__ == "__main__":
-    amostra = [
-        11, 5, 2, 0, 9, 9, 1, 5, 1, 3, 3, 3, 7, 4, 12, 8, 5, 2, 6, 1,
-        11, 1, 2, 4, 2, 1, 3, 9, 0, 10, 3, 3, 1, 5, 18, 4, 22, 8, 3, 0,
-        43, 728
-    ]
+    amostra = utils.load_dataset("entrada-lista-1.txt")
     
     # 1. Identificar Outliers
     print("--- ANÁLISE DE OUTLIERS ---")
@@ -213,11 +211,11 @@ if __name__ == "__main__":
     print(f"Moderados encontrados: {outliers['Moderados']}")
     print(f"Extremos encontrados: {outliers['Extremos']}")
     
-    # Escolhendo remover apenas o outlier extremo (como recomendado no material)
+    # Escolhendo remover apenas o outlier extremo
     amostra_limpa = gerenciar_outliers(amostra, acao='extremos')
     print(f"Tamanho da amostra após remover extremos: {len(amostra_limpa)}\n")
     
-    # 2. Estatística Descritiva (Usando amostra limpa)
+    # 2. Estatística Descritiva 
     print("--- ESTATÍSTICA DESCRITIVA ---")
     print(f"Média: {calcular_media(amostra_limpa):.2f}")
     q1, q2, q3 = calcular_quartis(amostra_limpa)

@@ -211,11 +211,7 @@ def teste_aderencia_ks(dados, alpha=0.05):
 # TESTE (EXECUÇÃO)
 # ==========================================
 if __name__ == "__main__":
-    amostra = [
-        11, 5, 2, 0, 9, 9, 1, 5, 1, 3, 3, 3, 7, 4, 12, 8, 5, 2, 6, 1,
-        11, 1, 2, 4, 2, 1, 3, 9, 0, 10, 3, 3, 1, 5, 18, 4, 22, 8, 3, 0,
-        43, 728
-    ]
+    amostra = utils.load_dataset("entrada-lista-1.txt")
     
     # 1. Tratamento de Outliers
     print("--- ANÁLISE E REMOÇÃO DE OUTLIERS ---")

@@ -222,15 +222,12 @@ def teste_aderencia_geral(dados, alpha=0.05):
 # ==========================================
 if __name__ == "__main__":
     # Amostra exemplo
-    amostra = [
-        11, 5, 2, 0, 9, 9, 1, 5, 1, 3, 3, 3, 7, 4, 12, 8, 5, 2, 6, 1,
-        11, 1, 2, 4, 2, 1, 3, 9, 0, 10, 3, 3, 1, 5, 18, 4, 22, 8, 3, 0,
-        43, 728 
-    ]
+    amostra = utils.load_dataset("entrada-lista-1.txt")
+
     
     print(f"Tamanho Original: {len(amostra)}")
     
-    # 1. Remoção de outliers (vamos remover os extremos, como o 728)
+    # 1. Remoção de outliers 
     amostra_limpa = remover_outliers(amostra, remover='extremos')
     print(f"Tamanho sem Extremos: {len(amostra_limpa)}\n")
     
