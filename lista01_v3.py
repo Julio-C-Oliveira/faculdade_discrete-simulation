@@ -2,6 +2,8 @@ import math
 import statistics as st
 import matplotlib.pyplot as plt
 
+import utils
+
 # ==========================================
 # Q02, Q03, Q04: MEDIDAS DE CENTRALIDADE
 # ==========================================
@@ -50,7 +52,7 @@ def calcular_dispersao(dados):
     media = calcular_media(dados)
     
     amplitude = max(dados) - min(dados)
-    variancia = st.pvariance(dados)  # Divide por N (conforme material)
+    variancia = st.pvariance(dados)  # Divide por N 
     desvio_padrao = st.pstdev(dados)
     coef_variacao = (desvio_padrao / media) * 100 if media != 0 else 0
     

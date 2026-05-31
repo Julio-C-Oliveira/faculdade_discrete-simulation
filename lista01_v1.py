@@ -1,5 +1,7 @@
+import utils
+
 # ==========================================
-# 1. FUNÇÕES MATEMÁTICAS E ESTATÍSTICAS BASE (Sem libs externas para cálculo)
+# 1. FUNÇÕES MATEMÁTICAS E ESTATÍSTICAS BASE 
 # ==========================================
 EULER = 2.718281828459045
 

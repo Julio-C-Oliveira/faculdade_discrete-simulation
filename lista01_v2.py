@@ -39,7 +39,6 @@ def calcular_moda(dados):
     try:
         return st.mode(dados)
     except st.StatisticsError:
-        # Fallback caso haja múltiplas modas e a versão do Python seja antiga
         contagens = {x: dados.count(x) for x in set(dados)}
         return max(contagens, key=contagens.get)
 
@@ -52,7 +51,7 @@ def calcular_dispersao(dados):
     media = calcular_media(dados)
     
     amplitude = max(dados) - min(dados)
-    variancia = st.pvariance(dados)  # pvariance divide por N (conforme material)
+    variancia = st.pvariance(dados)  # pvariance divide por N 
     desvio_padrao = st.pstdev(dados)
     coef_variacao = (desvio_padrao / media) * 100 if media != 0 else 0
     
@@ -132,7 +131,6 @@ def cdf_exponencial(x, lambd):
     return 1.0 - math.exp(-lambd * x)
 
 def cdf_normal(x, mu, sigma):
-    # Usando a função Erro (math.erf) nativa para a CDF exata da Normal
     if sigma == 0: return 1.0 if x >= mu else 0.0
     return (1.0 + math.erf((x - mu) / (sigma * math.sqrt(2.0)))) / 2.0
 
