@@ -1,1 +1,0 @@
-Esse repositório vai servir para armazenar os códigos relacionados a matéria Simulação Discreta.
